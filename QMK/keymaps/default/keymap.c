@@ -12,16 +12,19 @@ enum layer_names {
 enum custom_keycodes {
     KC_CUS_1 = SAFE_RANGE,
     KC_CUS_2,
-    KC_CUS_3
+    KC_CUS_3,
+    KC_CUS_4,
+    KC_CUS_5,
+    KC_CUS_6,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
         TG(_GAME),  KC_APP,   KC_CALC,  KC_MAIL,  MO(_BL),
         KC_PSLS,    KC_PAST,  KC_PMNS,  KC_PPLS,  KC_PENT,
-        KC_KP_7,    KC_KP_8,  KC_KP_9,  KC_PDOT,  KC_CUS_1,
-        KC_KP_4,    KC_KP_5,  KC_KP_6,  KC_PEQL,  KC_CUS_2,
-        KC_KP_1,    KC_KP_2,  KC_KP_3,  KC_PCMM,  KC_CUS_3
+        KC_KP_7,    KC_KP_8,  KC_KP_9,  KC_CUS_1, KC_CUS_2,
+        KC_KP_4,    KC_KP_5,  KC_KP_6,  KC_CUS_3, KC_CUS_4,
+        KC_KP_1,    KC_KP_2,  KC_KP_3,  KC_CUS_5, KC_CUS_6
    ),
     [_BL] = LAYOUT(
         _______,  RGB_TOG,  RGB_MOD, RGB_RMOD, _______,
@@ -47,7 +50,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             register_code(KC_RGUI);
             tap_code(KC_KP_1);
             unregister_code(KC_RGUI);
-        } else {
         }
         break;
     case KC_CUS_2:
@@ -55,7 +57,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             register_code(KC_RGUI);
             tap_code(KC_KP_2);
             unregister_code(KC_RGUI);
-        } else {
         }
         break;
     case KC_CUS_3:
@@ -63,7 +64,27 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             register_code(KC_RGUI);
             tap_code(KC_KP_3);
             unregister_code(KC_RGUI);
-        } else {
+        }
+        break;
+    case KC_CUS_4:
+        if (record->event.pressed) {
+            register_code(KC_RGUI);
+            tap_code(KC_KP_4);
+            unregister_code(KC_RGUI);
+        }
+        break;
+    case KC_CUS_5:
+        if (record->event.pressed) {
+            register_code(KC_RGUI);
+            tap_code(KC_KP_5);
+            unregister_code(KC_RGUI);
+        }
+        break;
+    case KC_CUS_6:
+        if (record->event.pressed) {
+            register_code(KC_RGUI);
+            tap_code(KC_KP_6);
+            unregister_code(KC_RGUI);
         }
         break;
     }
