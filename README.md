@@ -7,6 +7,12 @@ Another makropad from Aliexpress. 5x5 hotswap sockets with Gateron Reds, Mega32U
  - Keys: Gateron Red
  - Keycaps: Some leftovers
 
+# Howto install:
+
+- Copy or symlink this qmk directory to <QMK>/keyboards/degbroglie/lightning25
+- Build and flash with qmk flash -kb debroglie/lightning25 -km default
+
 ![Makropad](winry_layout.jpg)
 
 [Layout](http://www.keyboard-layout-editor.com/#/gists/80a98d5cfbc8ebb2f1737c184f72df6e)
+
