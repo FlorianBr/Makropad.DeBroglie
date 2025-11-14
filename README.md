@@ -2,15 +2,17 @@
 
 ![Makropad2](winry.jpg)
 
-Another makropad from Aliexpress. 5x5 hotswap sockets with Gateron Reds, Mega32U4, per Key RGB LEDs, 8 downlights, dfu bootloader. On USB it says dztech winry 25tf, PCB says Debroglie Lightning 25. Needed some reverse engineering to find out the pins for row, col and leds.
+Another makropad from Aliexpress. 5x5 hotswap sockets with Gateron Reds, Mega32U4, per Key RGB LEDs, 8 downlights, dfu bootloader.
+Current versions of QMK have that keyboard as winry/winry25tc. But not with a full LED Matrix configuration.
 
  - Keys: Gateron Red
  - Keycaps: Some leftovers
 
 # Howto install:
 
-- Copy or symlink this qmk directory to <QMK>/keyboards/degbroglie/lightning25
-- Build and flash with qmk flash -kb debroglie/lightning25 -km default
+- Copy or symlink the keymap directory to <QMK>/keyboards/winry/winry25tc/keymaps
+- Copy or symlink the keyboard.json to <QMK>/keyboards/winry/winry25tc and replace the existing one
+- Build and flash with qmk flash -kb winry/winry25tc -km <SYMLINKDIR>
 
 ![Makropad](winry_layout.jpg)
 
